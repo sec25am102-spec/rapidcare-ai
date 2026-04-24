@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RapidCare AI</title>
+  <title>RapidCare AI Dashboard</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1>🚑 RapidCare AI Dashboard</h1>
-  <button onclick="alert('Emergency Alert Sent!')">
-    Trigger Emergency Alert
-  </button>
+
+<h1>🚑 RapidCare AI Command Dashboard</h1>
+
+<div class="card">
+  <h2>🛏 ICU Beds Available</h2>
+  <p id="beds">12 Beds Free</p>
+</div>
+
+<div class="card">
+  <h2>🚑 Ambulance Status</h2>
+  <p id="ambulance">3 Ambulances Available</p>
+</div>
+
+<div class="card">
+  <h2>🚨 Emergency Actions</h2>
+  <button onclick="triggerEmergency()">Trigger Emergency Alert</button>
+  <button onclick="voiceAlert()">Voice Alert 🎙</button>
+</div>
+
+<div class="card">
+  <h2>📋 Active Emergencies</h2>
+  <ul id="emergencyList"></ul>
+</div>
+
+<script>
+
+function triggerEmergency(){
+  const list = document.getElementById("emergencyList");
+  const item = document.createElement("li");
+  item.innerText = "Code Blue – Ward 3 (Doctor Notified)";
+  list.appendChild(item);
+  alert("Emergency Alert Sent to Medical Team!");
+}
+
+function voiceAlert(){
+  alert("Voice detected: Code Blue in ICU. Alert Sent!");
+}
+
+</script>
+
 </body>
 </html>
